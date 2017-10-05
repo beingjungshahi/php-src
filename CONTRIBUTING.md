@@ -57,21 +57,12 @@ you add a link to the PR in the bug on [the bug tracker](https://bugs.php.net/).
 
 Pull requests implementing RFCs should be submitted against `master` branch.
 
-Pull requests should *never* be submitted against `PHP-x.y.z` branches, as
-these are only used for release management.
+Pull requests should *never* be submitted against `PHP-x.y.z` branches, as these
+are only used for release management when tagging the releases, hence they are
+closed to the general public.
 
 If your pull request exhibits conflicts with the base branch, please resolve them
 by using `git rebase` instead of `git merge`.
-
-| Branch            |                    |
-| ----------------- | ------------------ |
-| master            | The active development branch. |
-| PHP-7.2           | For releasing the PHP 7.2.x series. This is a prerelease version. |
-| PHP-7.1           | For releasing the PHP 7.1.x series. This is a current stable version and is open for bugfixes only. |
-| PHP-7.0           | For releasing the PHP 7.0.x series. This is a current stable version and is open for bugfixes only. |
-| PHP-5.6           | For releasing the PHP 5.6.x series. This is a current stable version and is open for security bugfixes only. |
-| PHP-5.5 and below | These branches are closed. |
-| PHP-X.Y.Z         | These branches are used for the release managers for tagging the releases, hence they are closed to the general public. |
 
 ## Writing tests
 
@@ -191,7 +182,9 @@ Fixed bug #14016 (pgsql notice handler double free crash bug.)
 ```
 
 When you change the NEWS file for a bug fix, then please keep the bugs sorted in
-decreasing order under the fixed version.
+decreasing order under the fixed version. Unless you are going to commit it
+yourself, you shouldn't include the NEWS entry as it will probably create
+conflicts for the person merging it.
 
 You can use [GitHub](https://github.com/php) and [gitweb](http://git.php.net/)
 to look at PHP Git repositories in various ways.
